@@ -25,8 +25,6 @@ export const styles = StyleSheet.create({
     width: 8,
     height: 8,
     backgroundColor: colors.primary,
-    
-    
     borderRadius: 3
   },
   check: {
@@ -43,6 +41,7 @@ export const styles = StyleSheet.create({
   title: {
     fontFamily: fonts.title700,
     color: colors.heading,
-    fontSize: 15
+    fontSize: 15,
+    marginTop: 15
   }
 })
