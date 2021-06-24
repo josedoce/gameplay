@@ -18,7 +18,13 @@ export function Guilds({handleGuildSelect}:GuildsProps){
       name: 'Lendários',
       icon: 'imagem.png',
       owner: true,
-    }
+    },
+    {
+      id: '2',
+      name: 'Los galos',
+      icon: 'imagem.png',
+      owner: false,
+    },
   ]
   return (
     <View style={styles.container}>
