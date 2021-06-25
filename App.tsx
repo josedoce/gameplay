@@ -5,7 +5,10 @@ import {Rajdhani_500Medium, Rajdhani_700Bold} from '@expo-google-fonts/rajdhani'
 import LoadingSplash from 'expo-app-loading';
 import { Routes } from './src/routes';
 import { Background } from './src/components/Background';
+import { AuthProvider } from './src/hooks/auth';
+import { LogBox } from 'react-native';
 
+// LogBox.ignoreLogs('nome_da_mensagem'); // isso é pra desabilitar mensagens de errors
 export default function App() {
   const [isCarregado] = useFonts({
     Inter_400Regular,
@@ -18,9 +21,13 @@ export default function App() {
     return <LoadingSplash/>
   }
   return (
-    <Background>
-      <Routes/>
-    </Background> 
+    
+      <Background>
+        <AuthProvider>
+          <Routes/>
+        </AuthProvider>
+      </Background> 
+    
   );
 }
 

@@ -1,6 +1,77 @@
-### Guia do estudo
 
-##### uso svg
+
+# O que aprendi: 
+
+## atalhos: 
+* [Usando autenticação](#autenticação)
+* [Usando context](#context)
+* [Usando svg](#uso-de-svg-no-expo)
+* [Usando gradient](#uso-de-efeito-gradient)
+* [Usando fontes](#carregamento-de-fontes)
+#### autenticação [#](#atalhos)
+
+usaremos a autenticação com o OAuth2
+o OAuth2 é um dos protocolos mais seguros que há
+
+instale via comando:
+> funcao: authenticação
+> https://docs.expo.io/versions/latest/sdk/auth-session/
+
+`$ expo install expo-auth-session expo-random`
+#### context [#](#atalhos)
+instale via comando:
+> funcao: centralizar o estado para ser usado por muitas telas.
+
+```ts
+import React, {
+  createContext, //usado para criar o contexto a ser compatilhado
+  useContext, //usar o contexto que foi criado
+  useState,
+  ReactNode
+} from 'react';
+
+type User = {
+  id: string;
+  userName: string;
+  firstName: string;
+  avatar: string;
+  email: string;
+  token: string;
+}
+
+type AuthContextData = {
+  user: User;
+}
+
+type AuthProviderProps = {
+  children: ReactNode;
+}
+//é tipo o redux saga
+//esse é o contexto de autenticação
+export const AuthContext = createContext({} as AuthContextData);
+
+function AuthProvider({children}:AuthProviderProps){
+  const [user, setUser] = useState<User>({} as User);
+  
+  return (
+    <AuthContext.Provider value={{user}}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
+
+function useAuth(){
+  const context = useContext(AuthContext);
+  return context;
+}
+
+export {
+  AuthProvider,
+  useAuth
+}
+```
+
+#### uso de svg no expo [#](#atalhos)
 instale via comando:
 > funcao: Fazer o react lidar com svgs
 `$ expo install react-native-svg`
@@ -34,7 +105,7 @@ module.exports = (async () => {
 })();
 ```
 
-##### uso de efeito gradient
+#### uso de efeito gradient [#](#atalhos)
 instale via comando:
 
 `$ expo install expo-linear-gradient` 
@@ -69,7 +140,7 @@ export default function Background({children}:BackgroundProps){
 ```
 
 ---
-##### carregamento de fontes
+#### carregamento de fontes [#](#atalhos)
 instale via comando:
 
 `$ expo install expo-font`
