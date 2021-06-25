@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: 68,
     flexDirection: 'row',
-    borderColor: colors.secondary50,
+    borderColor: colors.secondary40,
     borderWidth: 1,
     borderRadius: 8,
     alignItems: 'center',
@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     height: 68,
     backgroundColor: colors.secondary50,
     borderWidth: 1,
+    borderColor: colors.secondary50,
     borderRadius: 8
   },
   selectBody: {

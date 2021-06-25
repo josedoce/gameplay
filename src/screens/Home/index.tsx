@@ -13,8 +13,7 @@ import { ListDivider } from '../../components/ListDivider';
 import { Background } from '../../components/Background';
 import { useNavigation } from '@react-navigation/native';
 
-
-export function Home(){
+export function Home(){ 
   const [clicado, setClicado] = useState<string>('');
   const navigation = useNavigation();
   const appointments = [
@@ -41,7 +40,7 @@ export function Home(){
       category: '2',
       date: '22/06 as 20:40h',
       description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
-    }
+    },
   ]
 
   function handleAppointmentDetails(data: AppointmentDataProps){
@@ -68,26 +67,26 @@ export function Home(){
           categorySelected={clicado}
           setCategory={handleCategorySelect}
         />
+        <ListHeader 
+          title="Algum jogo" 
+          subtile="Nem imagino qual seja"
+        />
 
-        <View style={styles.content}>
-          <ListHeader 
-            title="Algum jogo" 
-            subtile="Nem imagino qual seja"
-          />
-
-          <FlatList
-            data={appointments}
-            keyExtractor={item=>item.id}
-            renderItem={({item})=>(
-              <Appointment
-                onPress={()=>handleAppointmentDetails(item)} 
-                data={item}/>
-            )}
-            ItemSeparatorComponent={()=><ListDivider/>}
-            style={styles.matches}
-            showsVerticalScrollIndicator={false}
-          /> 
-        </View>
+        <FlatList
+          data={appointments}
+          keyExtractor={item=>item.id}
+          renderItem={({item})=>(
+            <Appointment
+              onPress={()=>handleAppointmentDetails(item)} 
+              data={item}/>
+          )}
+          ItemSeparatorComponent={()=><ListDivider/>}
+          contentContainerStyle={{
+            paddingBottom: 69
+          }}
+          style={styles.matches}
+          showsVerticalScrollIndicator={false}
+        /> 
     </Background>
   )
 }
