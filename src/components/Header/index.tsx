@@ -35,10 +35,13 @@ export function Header({title, action}:HeaderProps){
         
         <Text style={styles.title}>{ title }</Text>
 
-        { action&&
+        { action
+        ?
           <View> 
             { action } 
           </View> 
+          :
+          <View style={{width: 24}}/>
         }
     </LinearGradient>
   )

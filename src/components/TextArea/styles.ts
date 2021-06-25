@@ -10,8 +10,12 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     fontFamily: fonts.text400,
     letterSpacing: 1,
-    fontSize: 25,
+    fontSize: 13,
     marginRight: 4,
-    textAlign: 'center'
+    borderWidth: 1,
+    borderColor: colors.secondary50,
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    textAlignVertical: 'top'
   }
 });

@@ -2,8 +2,20 @@ import React from "react";
 import {View} from 'react-native';
 import { styles } from "./styles";
 
-export function ListDivider(){
+type ListDividerProps = {
+  enableCentered?:boolean;
+}
+
+export function ListDivider({enableCentered}:ListDividerProps){
   return (
-    <View style={styles.container}/>
+    <View style={[
+      styles.container,
+      enableCentered ? {
+        marginVertical: 12,
+      } : {
+        marginTop: 2,
+        marginBottom: 31
+      }
+    ]}/>
   )
 }
