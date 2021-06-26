@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { 
   View,
   Text,
@@ -8,21 +8,16 @@ import { useAuth } from "../../hooks/auth";
 import { Avatar } from "../Avatar";
 import { styles } from "./styles";
 import { RectButton } from "react-native-gesture-handler";
+import { ModalView } from "../ModalView";
 
-export function Profile(){
+type ProfileProps = {
+  handleSignOut: () => void;
+}
+
+export function Profile({handleSignOut}:ProfileProps){
   const {user, signOut} = useAuth();
-  function handleSignOut(){
-    Alert.alert('Logout','Deseja sair do GamePlay ?',[
-      {
-        text: 'Cancelar',
-        style: 'cancel'
-      },
-      {
-        text: 'Confirmar',
-        onPress: () => signOut()
-      },
-    ])
-  }
+  
+  
   return(
     <View style={styles.container}>
       <RectButton onPress={handleSignOut}>
@@ -41,7 +36,6 @@ export function Profile(){
           Hoje é dia de vitória
         </Text>
       </View>
-    
     </View>
   )
 }

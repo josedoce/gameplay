@@ -10,10 +10,11 @@ import { styles } from './styles';
 
 type ModalViewProps = ModalProps & {
   children: ReactNode;
+  sizeVerticalbox?:number|string;
   closeModal: () => void;
 }
 
-export function ModalView({children, closeModal, ...rest}:ModalViewProps){
+export function ModalView({children, sizeVerticalbox, closeModal, ...rest}:ModalViewProps){
   return (
     <Modal
     statusBarTranslucent
@@ -22,7 +23,7 @@ export function ModalView({children, closeModal, ...rest}:ModalViewProps){
     {...rest}>
       <TouchableWithoutFeedback onPress={closeModal}>
         <View style={styles.overlay}>
-          <View style={styles.container}>
+          <View style={[styles.container, sizeVerticalbox?{marginTop: sizeVerticalbox}:{}]}>
             <Background>
               <View style={styles.bar}/>
               {children }
