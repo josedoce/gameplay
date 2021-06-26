@@ -1,7 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import {
   View,
-  FlatList,
+  FlatList, Text
 } from 'react-native';
 import { styles } from './styles';
 import { ListHeader } from '../../components/ListHeader';
@@ -15,13 +15,18 @@ import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 import { Load } from '../../components/Load';
+import { ModalView } from '../../components/ModalView';
+import { ModalLogout } from '../../components/ModalLogout';
+import { useAuth } from '../../hooks/auth';
 
 export function Home(){ 
   const [clicado, setClicado] = useState<string>('');
   const [appointments, setAppointments] = useState<AppointmentDataProps[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const navigation = useNavigation();
-
+  const [isModal, setIsModal] = useState<boolean>(false);
+  const {signOut} = useAuth();
+  
   function handleAppointmentDetails(data: AppointmentDataProps){
     navigation.navigate('AppointmentDetails', {guildSelected: data});
   }
@@ -49,10 +54,22 @@ export function Home(){
     loadAppointments();
   },[clicado]));
   
+  function handleSignOut(){
+    setIsModal(true)
+  }
+
+  function handleSignOutConfirm(){
+    signOut();
+    setIsModal(false)
+  }
+  
+  function handleSignOutClose(){
+    setIsModal(false)
+  }
   return (
     <Background>
       <View style={styles.header}>
-        <Profile/>
+        <Profile handleSignOut={handleSignOut}/>
         <ButtonAdd
           onPress={handleAppointmentCreate}
         />
@@ -86,6 +103,9 @@ export function Home(){
               showsVerticalScrollIndicator={false}
             />
           </>}
+        <ModalView sizeVerticalbox={700} closeModal={handleSignOutClose} visible={isModal}>
+          <ModalLogout closeModel={handleSignOutClose} actionModel={handleSignOutConfirm}/>
+        </ModalView>
     </Background>
   )
 }

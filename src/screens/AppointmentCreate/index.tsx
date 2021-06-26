@@ -24,6 +24,7 @@ import { GuildDataProps } from '../../components/Guild';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 import { useNavigation } from '@react-navigation/core';
+import { ButtonEdit } from '../../components/ButtonEdit';
 
 export function AppointmentCreate(){
   const [clicado, setClicado] = useState<string>('');
@@ -84,6 +85,9 @@ export function AppointmentCreate(){
         <ScrollView>
         <Header
           title="Agendar partida"
+          // action={
+          //   <ButtonEdit onPress={()=>setIsEditing(true)}/>
+          // }
         />
 
         <Text style={[
@@ -92,7 +96,6 @@ export function AppointmentCreate(){
         ]}>
           Categoria
         </Text>
-
         <CategorySelect
           enableCheckBox
           setCategory={handleCategorySelect}
