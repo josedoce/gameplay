@@ -1,13 +1,37 @@
+# Gameplay
 
+## O que aprendi: 
 
-# O que aprendi: 
-
-## atalhos: 
+### atalhos: 
+* [Usando .env no rn](#dotenv-no-react-native)
+* [Usando storage](#persistência-de-dados)
 * [Usando autenticação](#autenticação)
 * [Usando context](#context)
 * [Usando svg](#uso-de-svg-no-expo)
 * [Usando gradient](#uso-de-efeito-gradient)
 * [Usando fontes](#carregamento-de-fontes)
+
+#### dotenv no react-native [#](#atalhos)
+para o react entender dotenv, instale os seguintes pacotes:
+`$ yarn add dotenv babel-plugin-inline-dotenv`
+e configura o babel.config.js adicionando: 
+```js
+module.exports = function(api) {
+  api.cache(true);
+  return {
+    presets: ['babel-preset-expo'],
+    plugins:["inline-dotenv"]
+  };
+};
+```
+
+#### persistência de dados [#](#atalhos)
+> funcao: 
+> 
+
+instale via comando:
+Expo asyncStorage
+`$ https://docs.expo.io/versions/latest/sdk/async-storage/`
 #### autenticação [#](#atalhos)
 
 usaremos a autenticação com o OAuth2
