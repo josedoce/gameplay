@@ -8,10 +8,6 @@ import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { styles } from "./style";
 import DiscordImg from '../../assets/discord.png';
 
-/**
- * aqui digo que esse tipo usará tanto o que defini
- * quanto o que importei do component
-*/
 type ButtonIconProps = RectButtonProps & {
   title?: string;
 }

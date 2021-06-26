@@ -5,10 +5,6 @@ import {
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { styles } from "./style";
 
-/**
- * aqui digo que esse tipo usará tanto o que defini
- * quanto o que importei do component
-*/
 type ButtonIconProps = RectButtonProps & {
   title?: string;
 }

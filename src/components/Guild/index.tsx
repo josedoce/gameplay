@@ -11,7 +11,7 @@ import { Feather } from '@expo/vector-icons';
 import { colors } from '../../global/styles/theme';
 
 export type GuildDataProps = {
-  id: string|number;
+  id: string;
   name: string;
   icon: string|null|undefined;
   owner: boolean;
@@ -27,8 +27,7 @@ export function Guild({data, ...rest}:GuildProps){
       style={styles.container}
       activeOpacity={0.7}
       {...rest}>
-      <GuildIcon />
-
+      <GuildIcon guildId={data.id} iconId={data.icon}/>
       <View style={styles.content}>
         <View>
           <Text style={styles.title}>{data.name}</Text>
@@ -37,7 +36,6 @@ export function Guild({data, ...rest}:GuildProps){
           { data.owner ? 'Admnistrador':'Convidado'}
         </Text>
       </View>
-
       <Feather 
         name="chevron-right"
         color={colors.heading}

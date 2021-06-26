@@ -31,10 +31,8 @@ export function Header({title, action}:HeaderProps){
             size={24}
             color={heading}
           />
-        </BorderlessButton>
-        
+        </BorderlessButton>   
         <Text style={styles.title}>{ title }</Text>
-
         { action
         ?
           <View> 

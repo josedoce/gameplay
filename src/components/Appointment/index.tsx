@@ -34,7 +34,9 @@ export function Appointment({data, ...rest}:AppointmentProps){
         <LinearGradient
           style={styles.guildIconContainer}
           colors={[colors.secondary50, colors.secondary70]}>
-          <GuildIcon />
+          <GuildIcon 
+            guildId={data.guild.id} 
+            iconId={data.guild.icon}/>
         </LinearGradient>
         <View style={styles.content}>
           <View style={styles.header}>
@@ -62,7 +64,6 @@ export function Appointment({data, ...rest}:AppointmentProps){
               </Text>
             </View>
           </View>
-         
         </View>
       </View>
     </RectButton>

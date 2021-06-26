@@ -28,12 +28,10 @@ export function Category({title, icon: Icon, checked = false, hasCheckBox = fals
           {
             hasCheckBox&&<View style={checked?styles.checked : styles.check}/>
           }
-          
           <Icon
               width={48}
               height={48}
             />
-
           <Text style={styles.title}>
             { title }
           </Text>

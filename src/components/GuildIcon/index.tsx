@@ -1,14 +1,31 @@
 import React from "react";
-import {Image} from 'react-native';
+import {
+  Image, View
+} from 'react-native';
 import { styles } from "./styles";
+import DiscordSvg from '../../assets/discord.svg';
+const {CDN_IMAGE} = process.env;
 
-export function GuildIcon(){
-  const uri = "https://play-lh.googleusercontent.com/GedBUrd46najAuenCvblsorvr85uFsEb1azoZ1YUBIIfRbUQqhxkT7cpErq4XCI-u9GQ"
+type GuildIconProps = {
+  guildId: string;
+  iconId?: string|null;
+}
+
+export function GuildIcon({guildId,iconId}:GuildIconProps){
+  const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
   return(
-    <Image
-      source={{uri}}
-      style={styles.image}
-      resizeMode='cover'
-    />
+    <View style={styles.container}>
+      {iconId
+        ?<Image
+          source={{uri}}
+          style={styles.image}
+          resizeMode='cover'
+        />
+        :<DiscordSvg
+          width={40}
+          height={40}
+        />
+      }
+    </View>
   )
 }
