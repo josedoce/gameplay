@@ -13,7 +13,6 @@ import { Background } from '../../components/Background';
 import { useAuth } from '../../hooks/auth';
 import { colors } from '../../global/styles/theme';
 export function SignIn(){
-  //usando o contexto
   const {loading, signIn} = useAuth();
  
   async function handleSignIn(){
