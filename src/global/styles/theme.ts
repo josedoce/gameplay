@@ -15,6 +15,7 @@ export const colors = {
   overlay: 'rgba(0,0,0,0.7)',
   highlight: '#ABB1CC',
   on: '#32BD50',
+  discord: '#7289da'
 }
 
 export const fonts = {
