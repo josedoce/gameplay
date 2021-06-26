@@ -1,5 +1,17 @@
 # Gameplay
 
+## Qual o proposito do aplicativo?
+Agendamento de rotina, para jogadores.
+
+### Screenshots
+
+<img src="https://user-images.githubusercontent.com/66434808/123528422-387fe180-d6bd-11eb-814f-ce099e08ea3c.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528424-39187800-d6bd-11eb-858f-97fc7f99856a.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528426-39b10e80-d6bd-11eb-96e6-e912c0e3ff0c.png" alt="Screenshot_20210626-201816" width="250" height="auto"/><img src="https://user-images.githubusercontent.com/66434808/123528421-374eb480-d6bd-11eb-8da3-46dacaf12944.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528427-3a49a500-d6bd-11eb-8939-36d182f74871.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528419-361d8780-d6bd-11eb-9331-4a4474e811a8.png" alt="Screenshot_20210626-201816" width="250" height="auto" />
+
+### Funcionalidades disponiveis na  aplicação:
+* autenticação com discord
+* criação de eventos
+* logout
+
 ## O que aprendi: 
 
 ### atalhos: 
@@ -27,7 +39,6 @@ module.exports = function(api) {
 
 #### persistência de dados [#](#atalhos)
 > funcao: 
-> 
 
 instale via comando:
 Expo asyncStorage
