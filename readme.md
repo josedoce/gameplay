@@ -1,17 +1,54 @@
 # Gameplay
 
-## Qual o proposito do aplicativo?
-Agendamento de rotina, para jogadores.
+## Qual o propósito do aplicativo?
+O aplicativo tem como principal finalidade o estudo,
+mas pode ser utilizado por quem quizer para agendamentos ou para outros fins, sinta-se livre para clonar. :) vamos evoluir estudando.
 
 ### Screenshots
 
-<img src="https://user-images.githubusercontent.com/66434808/123528422-387fe180-d6bd-11eb-814f-ce099e08ea3c.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528424-39187800-d6bd-11eb-858f-97fc7f99856a.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528426-39b10e80-d6bd-11eb-96e6-e912c0e3ff0c.png" alt="Screenshot_20210626-201816" width="250" height="auto"/><img src="https://user-images.githubusercontent.com/66434808/123528421-374eb480-d6bd-11eb-8da3-46dacaf12944.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528427-3a49a500-d6bd-11eb-8939-36d182f74871.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528419-361d8780-d6bd-11eb-9331-4a4474e811a8.png" alt="Screenshot_20210626-201816" width="250" height="auto" />
+<img src="https://user-images.githubusercontent.com/66434808/123528422-387fe180-d6bd-11eb-814f-ce099e08ea3c.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528424-39187800-d6bd-11eb-858f-97fc7f99856a.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528426-39b10e80-d6bd-11eb-96e6-e912c0e3ff0c.png" alt="Screenshot_20210626-201816" width="250" height="auto"/><img src="https://user-images.githubusercontent.com/66434808/123528421-374eb480-d6bd-11eb-8da3-46dacaf12944.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528427-3a49a500-d6bd-11eb-8939-36d182f74871.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123528419-361d8780-d6bd-11eb-9331-4a4474e811a8.png" alt="Screenshot_20210626-201816" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123557618-40e12680-d768-11eb-846b-8e43d8255cd5.png" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123557621-4179bd00-d768-11eb-94e8-f83ccb9250b6.png" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123557622-4179bd00-d768-11eb-93d1-ac9a9f592937.png" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123557623-42125380-d768-11eb-8a14-5e7e5bb7a505.png" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123557624-42aaea00-d768-11eb-9455-124cf2647d18.png" width="250" height="auto" /><img src="https://user-images.githubusercontent.com/66434808/123557625-43438080-d768-11eb-9fcf-8880dc4514a2.png" width="250" height="auto" />
+
+
 
 ### Funcionalidades disponiveis na  aplicação:
 * autenticação com discord
 * criação de eventos
+* edição de eventos
+* exclusão de eventos
+* validações de eventos
+* persistência de dados
 * logout
 
+### Tecnologias utilizadas:
+
+* typescrip
+* javascript
+* react-native
+* oAuth2
+
+
+### como posso testar a aplicação:
+
+
+Recomendo, primeiramente que instale o ambiente _expo_, caso já tenha, desconsidere linha **1**:
+
+**1->** `$ npm install --global expo-cli`
+
+intale as dependencias do projeto como na linha **2**
+
+**2->**`$ yarn install`
+
+execute a aplicação utilizando o expo como na linha **3**
+
+**3->**`$ expo start`
+
+instale expo em seu dispositivo para testes e se quiser modificar algo:
+
+>android( play store )
+[expo go](https://play.google.com/store/apps/details?id=host.exp.exponent)
+
+>iphone( appstore )
+[expo](https://itunes.com/apps/exponent)
 ## O que aprendi: 
 
 ### atalhos: 
