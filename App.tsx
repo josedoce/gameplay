@@ -19,6 +19,7 @@ export default function App() {
   if(!isCarregado){
     return <LoadingSplash/>
   }
+ 
   return (
     <Background>
       <AuthProvider>
