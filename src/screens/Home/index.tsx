@@ -16,7 +16,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 import { Load } from '../../components/Load';
 import { ModalView } from '../../components/ModalView';
-import { ModalLogout } from '../../components/ModalLogout';
+import { ModalConfirm } from '../../components/ModalConfirm';
 import { useAuth } from '../../hooks/auth';
 
 export function Home(){ 
@@ -104,7 +104,10 @@ export function Home(){
             />
           </>}
         <ModalView sizeVerticalbox={700} closeModal={handleSignOutClose} visible={isModal}>
-          <ModalLogout closeModel={handleSignOutClose} actionModel={handleSignOutConfirm}/>
+          <ModalConfirm 
+            title="Deseja fazer logout?"
+            closeModel={handleSignOutClose} 
+            actionModel={handleSignOutConfirm}/>
         </ModalView>
     </Background>
   )

@@ -47,11 +47,12 @@ export function AppointmentDetails(){
       const response = await api.get(`/guilds/${guildSelected.guild.id}/widget.json`);
       setWidget(response.data);
     } catch {
-      Alert.alert('Erro de busca','Verifique as configurações do servidor. Será que o Widget está habilitado?')
+      Alert.alert('Erro de busca','Verifique as configurações do servidor deste administrador. Será que o Widget está habilitado?');
     } finally {
       setLoading(false);
     }
   }
+  
   function handleShareInvitation(){
     const message = Platform.OS === 'ios'
     ?`Junte-se a ${guildSelected.guild.name}`
@@ -110,7 +111,7 @@ export function AppointmentDetails(){
       :<>
         <ListHeader
           title="Jogadores"
-          subtile={`Total ${widget.members.length}`}
+          subtile={`${widget.members == undefined?'Não há dados.':'Total '+widget.members.length}`}
         />
         <FlatList 
           data={widget.members}
@@ -122,11 +123,12 @@ export function AppointmentDetails(){
           style={styles.members}
         />
       </>}
-      <View style={styles.footer}>
+
+      {widget.instant_invite!=undefined&&<View style={styles.footer}>
         <ButtonIcon
           onPress={handleOpenGuild} 
           title="Entrar na partida"/>
-      </View>
+      </View>}
     </Background>
   )
 } 
