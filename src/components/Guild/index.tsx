@@ -12,7 +12,7 @@ import { colors } from '../../global/styles/theme';
 
 export type GuildDataProps = {
   id: string;
-  name: string;
+  name: string|null;
   icon: string|null|undefined;
   owner: boolean;
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import {
   View,
-  Text
+  Text,
+  TouchableOpacity, TouchableOpacityProps
 } from 'react-native';
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { styles } from "./styles";
@@ -21,7 +22,7 @@ export type AppointmentDataProps = {
   description: string;
 }
 
-type AppointmentProps = RectButtonProps & {
+type AppointmentProps = TouchableOpacityProps & {
   data: AppointmentDataProps;
 }
 
@@ -29,7 +30,7 @@ export function Appointment({data, ...rest}:AppointmentProps){
   const [category] = categories.filter(item=>item.id === data.category);
   const {owner} = data.guild;
   return (
-    <RectButton {...rest}>
+    <TouchableOpacity {...rest}>
       <View style={styles.container}>
         <LinearGradient
           style={styles.guildIconContainer}
@@ -66,6 +67,6 @@ export function Appointment({data, ...rest}:AppointmentProps){
           </View>
         </View>
       </View>
-    </RectButton>
+    </TouchableOpacity>
   )
 }
